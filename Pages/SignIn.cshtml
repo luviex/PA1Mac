@@ -1,0 +1,28 @@
+﻿@page
+@model SignInModel
+@{
+    ViewData["Title"] = "Sign In";
+}
+
+<h1>Sign In</h1>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Username" class="form-label">Username</label>
+        <input asp-for="Username" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label">Password</label>
+        <input asp-for="Password" type="password" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Sign In</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-success mt-3">
+        @Model.Message
+    </div>
+}
